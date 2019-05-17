@@ -1,7 +1,7 @@
 import numpy as np
 import math
 
-testboard = [None, None, None, 6, 1, 9, 7, 5, 3,
+testboard = [None, None, 8, 6, 1, 9, 7, 5, 3,
              3, 9, 1, 7, 5, 2, 6, 8, 4,
              6, None, None, None, 8, 4, 1, 9, 2,
              1, 3, 9, 4, 2, 7, 8, 6, 5,
@@ -9,7 +9,7 @@ testboard = [None, None, None, 6, 1, 9, 7, 5, 3,
              7, 6, 2, 8, 3, 5, 4, 1, 9,
              8, 4, 3, 5, 7, 6, 9, 2, 1,
              2, 7, 5, 1, 9, 8, None, None, None,
-             9, 1, 6, 2, 4, None, None, None, None]
+             9, 1, 6, None, None, None, None, None, None]
 
 board_list = []
 
@@ -61,8 +61,8 @@ def get_square_neighbors(ind):
         target = ind + 8
     elif lcr == 'cc':
         target = ind
-    return [target-10, target-9, target-8, target-1,
-            target+1, target+8, target+9, target+10]
+
+    return [target + e for e in [10, -10, 9, -9, 8, -8, 1, -1]]
 
 
 def get_col_neighbors(ind):
