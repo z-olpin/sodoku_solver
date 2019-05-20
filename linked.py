@@ -79,40 +79,24 @@ def get_row_neighbors(ind, col_num):
     return row_neighbors
 
 
-def solve_board(board, last_tried=0, ind=None):
-    if None not in board:
-        print_board(board)
-        return
-    else:
-        if not ind:
-            ind = board.index(None)
+def solve_board(board):
+    for ind, v in enumerate(board):
+        if v != None:
+            continue
         col_num, col_neighbors = get_col_neighbors(ind)
         row_neighbors = get_row_neighbors(ind, col_num)
         square_neighbors = get_square_neighbors(ind)
         possible_nums = list({1, 2, 3, 4, 5, 6, 7, 8, 9} - set([board[e] for e in (row_neighbors + col_neighbors + square_neighbors)]))
-        possible_nums.sort()
 
-        if last_tried in possible_nums:
-            del possible_nums[:possible_nums.index(last_tried)+1]
-
-        if len(possible_nums) == 0:
-            if board_list[-1][0] is False:
-                last_tried = board_list[-1][2]
-                ind = board_list[-1][3]
-                board = board_list[-1][1]
-                board_list.pop()
-            solve_board(board, last_tried, ind)
-
-        if len(possible_nums) == 1:
-            del board[ind]
-            board.insert(ind, possible_nums[0])
-            board_list.append((board, possible_nums[0], ind))
-
-        if len(possible_nums) > 1:
-            del board[ind]
-            board.insert(ind, possible_nums[0])
-            board_list.append((board, possible_nums[0], ind))
-        solve_board(board, possible_nums[0])
+        for n in possible_nums:
+            try_board = board.copy()
+            del try_board[ind]
+            try_board.insert(ind, n)
+            result = solve_board(try_board)
+            if result != None:
+                return result
+        return None
+    return board
 
 
-solve_board(testboard)
+print_board(solve_board(testboard))
