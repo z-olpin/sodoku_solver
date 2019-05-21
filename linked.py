@@ -10,7 +10,9 @@ testboard = [None, None, None, 6, 1, 9, 7, 5, 3,
              2, 7, 5, 1, 9, 8, None, None, None,
              None, None, None, None, None, None, None, None, None]
 
-board_list = []
+def print_board(board):
+    for i in range(9):
+        print(*board[i*9:i*9+9])
 
 def get_neighbors(i):
     row = i // 9
@@ -43,4 +45,4 @@ def solve_board(board):
     return board
 
 
-print(solve_board(testboard))
+print_board(solve_board(testboard))
