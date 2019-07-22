@@ -1,14 +1,21 @@
-import math
+#!/usr/bin/env python3
 
-testboard = [8, None, None, None, None, None, None, None, None,
-             None, None, 3, 6, None, None, None, None, None,
-             None, 7, None, None, 9, None, 2, None, None,
-             None, 5, None, None, None, 7, None, None, None,
-             None, None, None, None, 4, 5, 7, None, None,
-             None, None, None, 1, None, None, None, 3, None,
-             None, None, 1, None, None, None, None, 6, 8,
-             None, None, 8, 5, None, None, None, 1, None,
-             None, 9, None, None, None, None, 4, None, None]
+"""
+Recursive sodoku solver.
+
+The board must be a one dimensional list of 81 elements. All empty squares of board should
+be `None`values (see example board below, described as "worlds hardest sodoku board" by The Telegraph)
+ 
+board = [8,   None, None, None, None, None, None, None, None,
+        None, None, 3,    6,    None, None, None, None, None,
+        None, 7,    None, None, 9,    None, 2,    None, None,
+        None, 5,    None, None, None, 7,    None, None, None,
+        None, None, None, None, 4,    5,    7,    None, None,
+        None, None, None, 1,    None, None, None, 3,    None,
+        None, None, 1,    None, None, None, None, 6,    8,
+        None, None, 8,    5,    None, None, None, 1,    None,
+        None, 9,    None, None, None, None, 4,    None, None]
+"""
 
 def print_board(board):
     for i in range(9):
@@ -45,4 +52,7 @@ def solve_board(board):
     return board
 
 
-print_board(solve_board(testboard))
+if board:
+    print_board(solve_board(board))
+else:
+    print("You need to add the board to be solved (see docstring) or feel free to use the example board above")
