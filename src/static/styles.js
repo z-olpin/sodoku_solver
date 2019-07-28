@@ -1,71 +1,44 @@
 const styles = {
-    all: {
-      fontSize: '3rem',
-      display: 'inline-block',
-      width: '3rem',
-      height: '3rem',
-      fontFamily: 'Helvetica, Arial, sans-serif',
-      margin: '3px',
-      display: 'inline-block',
-      padding: '10px',
-      textAlign: 'center',
-      verticalAlign: 'middle',
-      lineHeight: '3rem'
+    cell: {
+      width: '50px',
+      height: '50px',
+      border: '1px solid black',
+      font: '2em Helvetica',
+      textAlign: 'center'
     },
-    startColor: {
-      color: '#0000FF'
+    squareRow: {
+      flexDirection: 'row',
+      display: 'flex',
+      width: '150px',
+      height: '50px'
     },
-    otherColor: {
-      color: '#5e5e5e'
+    square: {
+      flex: '1',
+      border: '1px solid black',
+      width: '150px',
+      height: '150px'
     },
-    leftBorder: {
-      borderLeft: '4px solid black',
-      borderTop: '2px solid lightgrey',
-      borderRight: '2px solid lightgrey',
-      borderBottom: '2px solid lightgrey',
+    row: {
+      flex: '1',
+      display: 'flex'
     },
-    bottomBorder: {
-      borderBottom: '4px solid black'
+    board: {
+      margin: '2rem',
+      width: '456px',
+      display: 'flex',
+      flexDirection: 'column',
+      flexBasis: '1',
+      border: '2px solid black'
     },
-    regularBorder: {
-      border: '2px solid lightgrey',
-    },
-    button: {
-      fontFamily: 'Helvetica, Arial, Sans-serif',
-      fontSize: '2rem',
-      padding: '0.7rem',
-      border: '2px solid black',
-      borderRadius: '1em',
-      backgroundColor: '#CFCFCF'
-    },
-    inputStyles : {
-        width: '4.37rem',
-        height: '4.37rem',
-        fontSize: '3rem',
-        fontFamily: 'Helvetica, Arial, sans-serif',
-        color: '#0000ff',
-        border: '2px solid lightgrey',
-        margin: '3px',
-        padding: '1rem'
-      },
-    
-      inputLeftBorder: {
-        width: '4.37rem',
-        height: '4.37rem',
-        fontSize: '3rem',
-        fontFamily: 'Helvetica, Arial, sans-serif',
-        color: '#0000ff',
-        margin: '3px',
-        borderLeft: '4px solid black',
-        borderTop: '2px solid lightgrey',
-        borderRight: '2px solid lightgrey',
-        borderBottom: '2px solid lightgrey',
-        padding: '1rem'
-      },
-    
-      inputBottomBorder : {
-        borderBottom: '4px solid black'
-      }
+    boardContainer: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      flexDirection: 'row',
+      justifyContent: 'space-evenly',
+      alignContent: 'space-evenly',
+      alignItems: 'center'
+      
+    }
   }
 
 
