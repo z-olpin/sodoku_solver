@@ -6,11 +6,12 @@
   "scripts": {
     "test": "jest",
     "dev-server": "nodemon --exec babel-node src/server/server.js --ignore dist/",
-    "dev-bundle": "webpack -wd"
+    "dev-bundle": "webpack -wd",
+    "it": "npm run dev-server > /dev/null | npm run dev-bundle"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.5.5",
     "@babel/node": "^7.5.5",
