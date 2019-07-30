@@ -36,8 +36,17 @@ const styles = {
       flexDirection: 'row',
       justifyContent: 'space-evenly',
       alignContent: 'space-evenly',
-      alignItems: 'center'
-      
+      alignItems: 'flex-start' 
+    },
+    button: {
+      padding: '15px',
+      backgroundColor: '#CCDDDD',
+      fontSize: '3rem',
+      fontFamily: 'helvetica',
+      fontWeight: 'bold',
+      color: '#555555',
+      border: '2px solid black',
+      letterSpacing: '4'
     }
   }
 
