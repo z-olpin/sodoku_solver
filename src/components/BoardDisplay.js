@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import SolvedBoard from './SolvedBoard'
 import InputBoard from "./InputBoard"
-import solveBoard from './solver'
+import { getNeighbors, solveBoard } from "./solver";
 
 
 
@@ -15,21 +15,6 @@ const BoardDisplay = () => {
     // Gets neighbor indexes of input index. Violates DRY right now because extracting getNeighbors
     // function from solveBoard function in solver.js
 
-    const getNeighbors = (idx) => {
-      let row = Math.floor(idx/9)
-      let col = idx % 9
-      let square_idx = ((row % 3) * 3) + (idx % 3)
-      let square_t_targets = {0: 10, 1: 9, 2: 8, 3: 1, 4: 0, 5: -1, 6: -8, 7: -9, 8: -10}
-      let target_idx = square_t_targets[square_idx] + idx
-      let square_neighbors = []
-      for (let i=0; i<9; i++) {
-          square_neighbors.push(target_idx + square_t_targets[i])
-      }
-      let col_neighbors = [0, 9, 18, 27, 36, 45, 54, 63, 72].map(n => n + col) 
-      let row_neighbors = [...Array(9).keys()].map(n => n + idx-col)
-      let all_neighbors = row_neighbors.concat(col_neighbors, square_neighbors)
-      return all_neighbors
-    }
 
     // Make array of values in currrent board that are neighbors of input index
     let neighbors = new Set(getNeighbors(id))
