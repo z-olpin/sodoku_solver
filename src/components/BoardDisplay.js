@@ -23,9 +23,8 @@ const BoardDisplay = () => {
 
     // If value is not valid, set value to empty string and log ABORT
     if (neighborVals.includes(value)) {
-      // TODO: invalid input, deny
+      // TODO: invalid input, deny. Dont use getdocumentbyid method
       document.getElementById(id).value = ''
-      console.log('ABORRRT')
     } 
 
     // Prevents from inputting existing values in neighbors (except missing cases sometimes.
@@ -35,11 +34,6 @@ const BoardDisplay = () => {
     if (!neighborVals.includes(value)) {
       const newBoard = [...board.slice(0, id), value, ...board.slice(id + 1)]
       setBoard(newBoard)
-
-      // TODO: this styling should be done in CSS
-      document.getElementById(id).style.backgroundColor = 'lightgrey'
-      document.getElementById(id+100).style.backgroundColor = 'lightgrey'
-      document.getElementById(id+100).innerText = value
     }
   }
 
