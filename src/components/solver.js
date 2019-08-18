@@ -15,7 +15,6 @@ const getNeighbors = (idx) => {
   }
 
 const solveBoard = (b) => {
-    
     let difference = (setA, setB) => {
         let _difference = new Set(setA)
         for (let e of setB) {
@@ -23,7 +22,6 @@ const solveBoard = (b) => {
         }
         return _difference
     }
-      
     for (let i=0; i < b.length; i++) {
         if (b[i]) {
             continue
@@ -38,8 +36,9 @@ const solveBoard = (b) => {
         let possible_nums = difference(fullSet, neighborSet)
         for (let e of possible_nums) {
             let try_board = [...b]
-            try_board[i] = e
+            try_board[i] = setTimeout(()=> {
             let result = solveBoard(try_board)
+        }, 2000)
             if (result) return result
             
         }
