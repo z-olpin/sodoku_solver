@@ -104,7 +104,7 @@ const BoardDisplay = () => {
       <InputBoard handleSolve={handleSolve} onInput={onInput} />
       {//<SolvedBoard solvedBoard={solvedBoard} oldBoard={board} />
       }
-      <div>{midBoard}</div>
+      <div style={{width: '100px'}}><p style={{width: '100px', wordBreak: 'break-all'}}>{midBoard}</p></div>
     </>
   )
 }

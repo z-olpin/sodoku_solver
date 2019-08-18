@@ -4,7 +4,7 @@ const InputBoard = ({ onInput, handleSolve }) => {
   return (
     <>
       {[...Array(81)].map((v, i) => (
-        <input type="text" className="cells" id={i} onChange={(e) => onInput(Number(e.target.id), Number(e.target.value))} />
+        <input style={{width: '50px', height: '50px'}} type="text" className="cells" id={i} onChange={(e) => onInput(Number(e.target.id), Number(e.target.value))} />
       ))}
       <button onClick={handleSolve}>SOLVE</button>
     </>
