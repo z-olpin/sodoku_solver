@@ -22,7 +22,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "webpack": "^4.41.6",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.12"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
